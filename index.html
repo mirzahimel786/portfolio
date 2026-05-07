@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mirza Himel | Professional Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Inter',sans-serif;
+    }
+
+    html{scroll-behavior:smooth;}
+
+    body{
+      background:#f8fafc;
+      color:#0f172a;
+      line-height:1.7;
+    }
+
+    .container{
+      width:90%;
+      max-width:1150px;
+      margin:auto;
+    }
+
+    nav{
+      background:white;
+      border-bottom:1px solid #e5e7eb;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .nav-content{
+      height:72px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:22px;
+      font-weight:800;
+      color:#1e3a8a;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:28px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:#334155;
+      font-weight:500;
+    }
+
+    nav ul li a:hover{
+      color:#1e40af;
+    }
+
+    .hero{
+      padding:95px 0;
+      background:linear-gradient(135deg,#eff6ff,#f8fafc);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.3fr .7fr;
+      gap:45px;
+      align-items:center;
+    }
+
+    .badge{
+      display:inline-block;
+      background:#dbeafe;
+      color:#1e40af;
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      font-size:56px;
+      line-height:1.1;
+      margin-bottom:16px;
+      color:#0f172a;
+    }
+
+    .hero h2{
+      font-size:24px;
+      color:#2563eb;
+      margin-bottom:20px;
+      font-weight:700;
+    }
+
+    .hero p{
+      max-width:680px;
+      color:#475569;
+      font-size:17px;
+      margin-bottom:30px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:13px 24px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      display:inline-block;
+    }
+
+    .btn-primary{
+      background:#1e40af;
+      color:white;
+    }
+
+    .btn-outline{
+      border:1px solid #1e40af;
+      color:#1e40af;
+      background:white;
+    }
+
+    .profile-card{
+      background:white;
+      border:1px solid #e5e7eb;
+      border-radius:22px;
+      padding:30px;
+      box-shadow:0 20px 45px rgba(15,23,42,.08);
+    }
+
+    .profile-card h3{
+      font-size:22px;
+      margin-bottom:18px;
+      color:#1e3a8a;
+    }
+
+    .info-item{
+      margin-bottom:13px;
+      color:#475569;
+      font-size:15px;
+    }
+
+    .info-item strong{
+      color:#0f172a;
+    }
+
+    section{
+      padding:80px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:45px;
+    }
+
+    .section-title span{
+      color:#2563eb;
+      font-weight:800;
+      font-size:14px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    .section-title h2{
+      font-size:38px;
+      margin-top:8px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:24px;
+    }
+
+    .card{
+      background:white;
+      border:1px solid #e5e7eb;
+      border-radius:18px;
+      padding:28px;
+      box-shadow:0 10px 25px rgba(15,23,42,.05);
+    }
+
+    .card h3{
+      color:#1e3a8a;
+      margin-bottom:12px;
+      font-size:21px;
+    }
+
+    .card p,
+    .card li{
+      color:#475569;
+      font-size:15px;
+    }
+
+    ul{
+      padding-left:18px;
+    }
+
+    .tag-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .tag{
+      background:#eef2ff;
+      color:#1e40af;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .timeline{
+      display:grid;
+      gap:20px;
+    }
+
+    .timeline-item{
+      border-left:4px solid #2563eb;
+      padding-left:20px;
+      background:white;
+      border-radius:14px;
+      padding:22px 24px;
+      box-shadow:0 10px 25px rgba(15,23,42,.05);
+    }
+
+    .timeline-item h3{
+      color:#1e3a8a;
+      margin-bottom:6px;
+    }
+
+    .timeline-item small{
+      color:#64748b;
+      font-weight:700;
+    }
+
+    .contact-box{
+      background:#0f172a;
+      color:white;
+      border-radius:22px;
+      padding:45px;
+      text-align:center;
+    }
+
+    .contact-box h2{
+      margin-bottom:12px;
+      font-size:34px;
+    }
+
+    .contact-box p{
+      color:#cbd5e1;
+      margin-bottom:8px;
+    }
+
+    footer{
+      text-align:center;
+      padding:25px;
+      background:#020617;
+      color:#94a3b8;
+      font-size:14px;
+    }
+
+    @media(max-width:768px){
+      nav ul{display:none;}
+
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      .hero h2{
+        font-size:20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-content">
+      <div class="logo">Mirza Himel</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">CSE Graduate • Web Developer • UI/UX Enthusiast</span>
+        <h1>Mirza Md Saidur Rahman</h1>
+        <h2>Junior Software Developer | UI/UX Designer</h2>
+        <p>
+          Motivated Computer Science graduate with practical experience in web development,
+          UI/UX design, database design, software testing, leadership, event organizing,
+          and sports branding.
+        </p>
+        <div class="buttons">
+          <a href="Mirza_Himel_CV.pdf" class="btn btn-primary">Download CV</a>
+          <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <h3>Profile Summary</h3>
+        <div class="info-item"><strong>Location:</strong> Dhaka, Bangladesh</div>
+        <div class="info-item"><strong>Email:</strong> himelmirza123@gmail.com</div>
+        <div class="info-item"><strong>Phone:</strong> 01516503196</div>
+        <div class="info-item"><strong>Education:</strong> BSc in CSE, East West University</div>
+        <div class="info-item"><strong>Focus:</strong> PHP, MySQL, UI/UX, Software Testing</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <span>About</span>
+        <h2>Professional Overview</h2>
+      </div>
+      <div class="card">
+        <p>
+          I am a Computer Science & Engineering graduate skilled in developing web-based
+          systems using PHP, MySQL, HTML, CSS, and JavaScript. I also have experience in
+          UI/UX design using Figma, database design, software testing, team leadership,
+          and managing a custom sports jersey business.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-title">
+        <span>Skills</span>
+        <h2>Core Competencies</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Technical Skills</h3>
+          <div class="tag-wrap">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">PHP</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Figma</span>
+            <span class="tag">ERD</span>
+            <span class="tag">Software Testing</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Professional Skills</h3>
+          <ul>
+            <li>Team Leadership & Coordination</li>
+            <li>Problem Solving</li>
+            <li>Communication Skills</li>
+            <li>Event Organizing</li>
+            <li>Project Management</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-title">
+        <span>Projects</span>
+        <h2>Selected Work</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>Service Management System</h3>
+          <p>
+            Developed a service management platform for customers, technicians, and admins
+            using PHP & MySQL. Designed responsive UI/UX, booking features, dashboards,
+            ER diagrams, and workflow systems.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Sports Gallery Shop System</h3>
+          <p>
+            Designed and developed a sports shop management system with responsive frontend,
+            product handling, order management, and database integration.
+          </p>
+        </div>
+        <div class="card">
+          <h3>UI/UX Design Works</h3>
+          <p>
+            Created clean and user-friendly interface designs using Figma, focusing on
+            layout, usability, typography, color balance, and professional user experience.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-title">
+        <span>Experience</span>
+        <h2>Work & Leadership</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Founder & Manager — Custom Sports Jersey Business</h3>
+          <small>Business & Client Management</small>
+          <p>Managed jersey customization orders, customer communication, design coordination, printing, and delivery operations.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Event Organizer — East West University Sports Club</h3>
+          <small>2021 – 2022</small>
+          <p>Organized university sports events, coordinated teams, and supported event operations.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Content Developer — Riziq IT Solution</h3>
+          <small>2022</small>
+          <p>Worked on digital content preparation and content management tasks.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Audio Transcriber — Office Audio Transcriber</h3>
+          <small>2020 – 2021</small>
+          <p>Prepared and managed audio transcription documents with accuracy and attention to detail.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <span>Achievements</span>
+        <h2>Leadership & Activities</h2>
+      </div>
+      <div class="card">
+        <ul>
+          <li>General Secretary, EWU Sports Club</li>
+          <li>Senior Member, EWU Computer Programming Club</li>
+          <li>Member, EWU Cyber Security Club</li>
+          <li>Champion, EWU Football Fiesta 2023</li>
+          <li>Runner-Up, EWU CSE Intra Football Tournament</li>
+          <li>Secured 2nd Position, EWU Run 5K Marathon Season 1</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Let’s Work Together</h2>
+        <p>Email: himelmirza123@gmail.com</p>
+        <p>Phone: 01516503196</p>
+        <p>Location: Dhaka, Bangladesh</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Mirza Himel. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
